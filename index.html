@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajex-Get</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/script/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar Holder -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <button type="button" class="back-btn" style="float: right;">
+                    <i class="glyphicon glyphicon-arrow-left"></i>
+                </button>
+                <h3>All API's</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#falcon-history-data" id="falcon-api">History</a><button class="history-drop-menu"><i class="fa-solid fa-chevron-left"></i></button>
+                    <ul class="list-unstyled history-menu-list" style="display: none;">
+                        <li><a href="#" id="all-events">All Historical Events</a></li>
+                        <li><a href="#" id="one-event">One Historical Event</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#landing-pad-data" id="landing-pad-api">Landing Pads</a><button class="landing-drop-menu"><i class="fa-solid fa-chevron-left"></i></button>
+                    <ul class="list-unstyled landing-menu-list" style="display: none;">
+                        <li><a href="#" id="all-landings">All Landings Pads</a></li>
+                        <li><a href="#" id="one-landing">One Landing Pads</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#launches-data" id="launch-api">Launches</a><button class="launch-drop-menu"><i class="fa-solid fa-chevron-left"></i></button>
+                    <ul class="list-unstyled launch-menu-list" style="display: none;">
+                        <li><a href="#" id="all-launches">All Launches</a></li>
+                        <li><a href="#" id="one-launch">One Launch</a></li>
+                        <li><a href="#" id="past-launches">Past Launches</a></li>
+                        <li><a href="#" id="upcoming-launches">Upcoming Launches</a></li>
+                        <li><a href="#" id="latest-launches">Latest Launches</a></li>
+                        <li><a href="#" id="next-launch">Next Launch</a></li>
+                    </ul>
+                </li>
+                <!-- <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content" class="active">
+            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn" style="position: relative;">
+                <i class="glyphicon glyphicon-align-left"></i>
+            </button>
+            <!--===================================================================================================
+                                                FALCON-HISTORY-STARTED
+            =====================================================================================================-->
+            <div id="falcon-history-details" class="active modal fade" role="dialog" style="display: none;">
+                <button type="button" class="btn btn-dlt" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+                <div class="details">
+                    <h3 class="title"></h3>
+                    <div id="history_some_details">
+                        <div><b>ID: </b><span class="falcon-id"></span></div>
+                        <div><b>event_date_utc: </b><span class="event-date-utc"></span></div>
+                        <div><b>event_date_unix: </b><span class="event-date-unix"></span></div>
+                        <div><b>flight_number: </b><span class="flight-number"></span></div>
+                        <div><b>details: </b><span class="falcon-details"></span></div>
+                    </div>
+                    <div class="links-section">
+                        <h3 class="links">Links: </h3>
+                        <p><a class="reddit" href="">Reddit</a> </p>
+                        <p><a class="article" href=""><b>Article </b></a></p>
+                        <p><a class="wikipedia" href=""><b>wikipedia </b></a></p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="falcon-all-cards">
+                <div style="text-align: center; padding-bottom: 30px;">
+                    <h1 style="border-bottom: 2px solid green;">FALCON-HISTORY-API</h1>
+                </div>
+                <div id="falcon-history-data"></div>
+            </div>
+            <!--==================================================================================
+                                             FALCON-HISTORY-ENDED
+            ====================================================================================-->
+            <!--=================================================================================
+                                            LANDING-PAD-API-STARTED
+            ==================================================================================-->
+            <div id="landing-pad-details" class="active modal fade" role="dialog" style="display: none;">
+                <button type="button" class="btn btn-dtl" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+                <div class="details">
+                    <h3 class="full_name"></h3>
+                    <div id="some_landing_pad_details">
+                        <div><b>ID: </b><span class="id"></span></div>
+                        <div><b>status: </b><span class="status"></span></div>
+                        <div>
+                            <h2 class="location">Location:</h2>
+                            <div><b>name: </b><span class="name"></span></div>
+                            <div><b>Region: </b><span class="region"></span></div>
+                            <div><b>Latitude: </b><span class="latitude"></span></div>
+                            <div><b>Longitude: </b><span class="longitude"></span></div>
+                        </div>
+                        <div><b>landing_type: </b><span class="landing_type"></span></div>
+                        <div><b>attempted_landings: </b><span class="attempted_landings"></span></div>
+                        <div><b>successful_landings: </b><span class="successful_landings"></span></div>
+                        <div><p><a class="wikipedia" href=""><b>wikipedia </b></a></p></div>
+                        <div><b>details: </b><span class="pad-details"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div id="landing-all-cards">
+                <div style="text-align: center; padding-bottom: 30px;">
+                    <h1 style="border-bottom: 2px solid green;">LANDING-PAD-API</h1>
+                </div>
+                <div id="landing-pad-data">
+                </div>
+            </div>
+            <!--===================================================================================================
+                                                 LANDING-PAD-API-ENDED
+            =====================================================================================================-->
+        </div>
+
+    </div>
+</body>
+
+</html>
